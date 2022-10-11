@@ -1,0 +1,40 @@
+
+
+<div class="card" style="direction: rtl;">
+    <p-table [value]="rows" #dt2 [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+        [rowsPerPageOptions]="[10,25,50]" sortMode="multiple" 
+        [loading]="loading" 
+        [globalFilterFields]="['message','result','errorMessage','userName']" 
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+        <!-- [lazy]="true" (onLazyLoad)="loadCustomers($event)"  -->
+        <ng-template pTemplate="caption">
+          <div class="flex">
+              <span class="p-input-icon-left ml-auto">
+                  <i class="pi pi-search"></i>
+                  <input pInputText type="text" (input)="dt2.filterGlobal(SearchInTable($any($event).target.value), 'contains')" 
+                    placeholder="جستجو ..." />
+              </span>
+          </div>
+      </ng-template>
+        <ng-template pTemplate="header">
+            <tr class="header">
+                <th style="text-align: center;">ردیف</th>
+                <th style="text-align: center;">عملیات</th>
+                <th style="text-align: center;">نتیجه</th>
+                <th style="text-align: center;" >متن</th>
+                <th style="text-align: center;">کاربر</th>
+                <th style="text-align: center;">زمان ثبت</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-row let-i="rowIndex">
+            <tr let i = index>
+                <td style="text-align: center;">{{i + 1}}</td>
+                <td style="text-align: right;">{{row.message}}</td>
+                <td style="text-align: right;">{{row.result}}</td>
+                <td style="text-align: right;" >{{row.errorMessage}}</td>
+                <td style="text-align: right;">{{row.userName}}</td>
+                <td style="text-align: right;">{{row.registerDate | date:'medium'}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+  </div>

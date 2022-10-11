@@ -1,0 +1,47 @@
+
+    <div class="container">
+      <div class="row">
+        <div class="card col-md-5" style="margin-left: 5px;margin-right: 5px;">
+          <div class="card-header">
+            <h2 class="my-0 font-weight-normal">افزودن کاربر</h2>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>لیست کاربران جدید نمایش و میتوان کاربر جدید را به اکتیو دایرکتوری اضافه کرد</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary" (click)="newUserClick()">
+                افزودن کاربر
+                <!-- &nbsp;&nbsp;کاربر جدید&nbsp;&nbsp; -->
+            </button>
+          </div>
+        </div>
+        <div class="card col-md-5"  style="margin-left: 5px;margin-right: 5px;">
+          <div class="card-header">
+            <h2 class="my-0 font-weight-normal">فعال و غیرفعال سازی کاربر</h2>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>لیست کاربران را نمایش و میتوان کاربر را در اکتیو دایرکتوری فعال یا غیر فعال کرد</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary" (click)="SetActivationClick()">
+                تنظیمات کاربر
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;فعال&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+            </button>
+          </div>
+        </div>
+        <div class="card col-md-5"  style="margin-left: 5px;margin-right: 5px;margin-top: 10px;">
+          <div class="card-header">
+            <h2 class="my-0 font-weight-normal">گزارشات کاربر</h2>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>گزارشات مربوط به تغییراتی که کاربرانانجام داده اند را نمایش می دهد</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary" (click)="ReportClick()">
+                گزارشات
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;فعال&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

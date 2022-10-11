@@ -1,0 +1,33 @@
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form>
+                    <div class="form-group">
+                        <label class="error text-danger">{{ShowError}}</label>
+                    </div>
+    
+                    <!-- Email input -->
+                    <div class="form-group">
+                        <label for="UserName">نام کاربری</label>
+                        <input type="text" id="UserName" #UserName class="form-control form-control-lg" placeholder="" />
+                    </div>
+        
+                    <!-- Password input -->
+                    <div class="form-group">
+                        <label for="Password">رمز عبور</label>
+                        <input type="password" id="Password" #Password class="form-control form-control-lg" placeholder="" />
+                    </div>
+        
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                    <button type="button" class="btn btn-primary btn-lg" 
+                        style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="loginClick($event)">ورود</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="assets/draw2.webp" class="img-fluid" alt="Sample image">
+            </div>
+        </div>
+    </div>
+</section>

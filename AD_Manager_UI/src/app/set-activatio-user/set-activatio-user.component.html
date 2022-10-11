@@ -1,0 +1,45 @@
+
+
+<div class="card" style="direction: rtl;">
+    <p-table [value]="rows" #dt2 [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+        [rowsPerPageOptions]="[10,25,50]" sortMode="multiple" 
+        [loading]="loading" 
+        [globalFilterFields]="['firstName','lastName','nationalCode','grade','workplace']" 
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+        <!-- [lazy]="true" (onLazyLoad)="loadCustomers($event)"  -->
+        <ng-template pTemplate="caption">
+          <div class="flex">
+              <span class="p-input-icon-left ml-auto">
+                  <i class="pi pi-search"></i>
+                  <input pInputText type="text" (input)="dt2.filterGlobal(SearchInTable($any($event).target.value), 'contains')" 
+                    placeholder="جستجو ..." />
+              </span>
+          </div>
+      </ng-template>
+        <ng-template pTemplate="header">
+            <tr class="header">
+                <th style="text-align: center;">ردیف</th>
+                <th style="text-align: center;">نام و نام خانوادگی</th>
+                <th style="text-align: center;">کد ملی</th>
+                <th style="text-align: center;" >ایمیل</th>
+                <th style="text-align: center;">مقطع تحصیلی</th>
+                <th style="text-align: center;">محل خدمت</th>
+                <th style="text-align: center;">فعال/غیر فعال</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-row let-i="rowIndex">
+            <tr let i = index>
+                <td style="text-align: center;">{{i + 1}}</td>
+                <td style="text-align: right;">{{row.firstName}} {{row.lastName}}</td>
+                <td style="text-align: right;">{{row.nationalCode}}</td>
+                <td style="text-align: right;" >{{row.email}}</td>
+                <td style="text-align: right;">{{row.grade}}</td>
+                <td style="text-align: right;">{{row.workplace}}</td>
+                <td style="text-align: center;" id="editcol">
+                  <a class="link-primary" *ngIf="row.shaghel" (click)="RegisterClick($event, row)"> غیرفعال</a>
+                  <a class="link-primary" *ngIf="!row.shaghel" (click)="RegisterClick($event, row)"> فعال</a>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+  </div>

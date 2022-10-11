@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    direction: rtl;
+    padding: 1px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// .pi-angle-double-left:before {
+//     content: "\e92d";
+// }
+// .pi-angle-left:before {
+//     content: "\e931";
+// }
+// .pi-angle-right:before {
+//     content: "\e932";
+// }
+// .pi-angle-double-right:before {
+//     content: "\e92e";
+// }
+
+.pi-angle-double-right:before {
+    content: "\e92d" !important;
+}
+.pi-angle-right:before {
+    content: "\e931" !important;
+}
+.pi-angle-left:before {
+    content: "\e932" !important;
+}
+.pi-angle-double-left:before {
+    content: "\e92e" !important;
+}

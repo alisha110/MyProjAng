@@ -1,0 +1,127 @@
+    <div class="container">
+      <div class="row">
+        <div  class="col-xs-1 col-md-2">
+          <label for="firstName">نام </label>
+        </div>
+        <div  class="col-xs-11 col-md-10">
+          <input type="text" class="form-control" readonly id="firstName" placeholder="" value="{{currentUser.firstName}}">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div  class="col-xs-1 col-md-2">
+          <label for="lastName">نام خانوادگی</label>
+        </div>
+        <div  class="col-xs-11 col-md-10">
+          <input type="text" class="form-control" readonly id="lastName" placeholder="" value="{{currentUser.lastName}}">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div  class="col-xs-1 col-md-2">
+          <label for="nationalCode">کد ملی </label>
+        </div>
+        <div  class="col-xs-11 col-md-10">
+          <input type="number" class="form-control" readonly id="nationalCode" placeholder="" value="{{currentUser.nationalCode}}">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div  class="col-xs-1 col-md-2">
+          <label for="grade">مقطع تحصیلی</label>
+        </div>
+        <div  class="col-xs-11 col-md-10">
+          <input type="text" class="form-control" readonly id="grade" placeholder="" value="{{currentUser.grade}}">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div  class="col-xs-1 col-md-2">
+          <label for="major">رشته تحصیلی</label>
+        </div>
+        <div  class="col-xs-11 col-md-10">
+          <input type="text" class="form-control" readonly id="major" placeholder="" value="{{currentUser.major}}">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div  class="col-xs-1 col-md-2">
+          <label for="workplace">محل خدمت</label>
+        </div>
+        <div  class="col-xs-11 col-md-10">
+          <input type="text" class="form-control" readonly id="workplace" placeholder="" value="{{currentUser.workplace}}">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div  class="col-xs-1 col-md-2">
+          <label for="OUplace">OU</label>
+        </div>
+        <div  class="col-xs-11 col-md-10">
+          <input type="text" class="form-control" id="OUplace" readonly placeholder="" value="{{currentUser.ouplace}}">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div  class="col-xs-1 col-md-2">
+          <label for="email2">نام کاربری</label>
+        </div>
+        <div  class="col-xs-11 col-md-10">
+          <div class="row">
+            <div  class="col-xs-3 col-md-3">
+              <input type="email" readonly class="form-control" id="email2" placeholder="" value="@mums.ac.ir" >
+            </div>
+            <div  class="col-xs-7 col-md-7">
+              <input #email  type="email" class="form-control" id="email1" placeholder="" 
+                [disabled] = "currentUser.UserName == 'Please Wait ....' ? 'disabled' : null"
+                (change)="usernameonChange(myInput.value)"
+                value="{{currentUser.UserName}}" #myInput>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="d-flex flex-row-reverse">
+        <button class="btn btn-danger"
+                style="padding-left:30px;padding-right:30px;margin:10px"
+                (click)="backClick($event)">
+          بازگشت
+        </button>
+        <button type="submit" class="btn btn-primary"
+                style="padding-left:60px;padding-right:60px;margin:10px"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
+          ثبت
+        </button>
+      </div>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-danger" id="exampleModalLabel">
+          اخطار!
+        </h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" 
+       aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>آیا کاربر ثبت شود؟</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="RegisterClick($event)">بله</button>
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal">خیر</button>
+      </div>
+    </div>
+  </div>
+</div>
+

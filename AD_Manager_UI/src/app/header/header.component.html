@@ -1,0 +1,15 @@
+
+<div class="d-flex justify-content-between">
+  <div *ngIf="staticUrlArray">
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-green" routerLink="/"><i style="font-size: x-large;" class="bi bi-house-door-fill"></i></a>
+      
+      <!-- <a class="p-2 text-dark" href="#">کاربر جدید</a>
+      <a class="p-2 text-dark" href="#">فعال سازی کاربر</a>
+      <a class="p-2 text-dark" href="#">غیر فعال سازی کاربر</a> -->
+    </nav>
+  </div>
+  <div>
+    <a class="btn btn-outline-danger" (click)="logout()" *ngIf="staticUrlArray" >خروج</a>
+  </div>
+</div>
